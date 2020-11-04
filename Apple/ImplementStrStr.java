@@ -9,7 +9,9 @@
  * 
  * 2) https://www.youtube.com/watch?v=KG44VoDtsAA
  * 
- * Following video provides a neat implementation with clear-cut explanation:
+ * Following video provides a neat implementation that goes hand in hand with
+ * the explanations above:
+ * 
  * https://www.youtube.com/watch?v=EL4ZbRF587g
  * 
  */
