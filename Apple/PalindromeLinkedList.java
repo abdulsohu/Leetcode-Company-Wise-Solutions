@@ -33,6 +33,46 @@ public class PalindromeLinkedList {
     }
 
     /**
+     * Following method does not require extra space, because it essentially
+     * reverses the latter half of the list, and then iterates through the first
+     * half as well as the second half and if it finds a discrepancy, it returns
+     * false!
+     */
+    public boolean isPalindromeNoExtraSpace(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        ListNode temp = reverse(slow);
+        ListNode temp1 = head;
+
+        while (temp1 != null && temp != null) {
+            if (temp1.val != temp.val)
+                return false;
+            temp = temp.next;
+            temp1 = temp1.next;
+        }
+        return true;
+    }
+
+    public ListNode reverse(ListNode temp) {
+        ListNode prev = null;
+        ListNode curr = temp;
+
+        while (curr != null) {
+            ListNode next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        return prev;
+    }
+
+    /**
      * Definition for singly-linked list.
      */
     public class ListNode {
